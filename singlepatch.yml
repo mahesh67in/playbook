@@ -1,0 +1,17 @@
+  tasks:
+     - name: download KBKB4012213 for Server 2012 R2
+       win_get_url:
+         url: ftp://16.184.128.80/Security%20Patches%20-%20May%202018/Windows%202012%20R2%20&%20%20Datacenter/windows8.1-kb4012213-x64_5b24b9ca5a123a844ed793e0f2be974148520349.msu
+         dest: C:\KB4012213.msu
+
+     - name: install hotfix
+       win_hotfix:
+         hotfix_kb: KB4012213
+         source: C:\KB4012213.msu
+         state: present
+       register: hotfix_result
+
+     - name: reboot host if required
+       win_reboot:
+       when: hotfix_result.reboot_required
+
