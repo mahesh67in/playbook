@@ -5,7 +5,7 @@
     - win_copy:
       src: C:\NEWWSUSSTORAGE\createuser
       dest: C:\Temp\renamed-foo.conf
-        env:
+       env:
             ts_integration: true
         environment:
             no_proxy: 15.213.30.168
