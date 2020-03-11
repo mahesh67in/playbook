@@ -3,9 +3,8 @@
   tasks:
     - shell: unset http_proxy && unset https_proxy
     - win_copy:
-        name: copy zipped repo to VM
-        src: '{{ Xcopy /E /I C:\NEWWSUSSTORAGE C:\NEWWSUSSTORAGEE}}'
-        dest: '{{ Xcopy /E /I C:\NEWWSUSSTORAGE C:\NEWWSUSSTORAGEDD}}'
+      src: C:\NEWWSUSSTORAGE\createuser
+      dest: C:\Temp\renamed-foo.conf
         env:
             ts_integration: true
         environment:
