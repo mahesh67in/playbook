@@ -4,8 +4,8 @@
     - shell: unset http_proxy && unset https_proxy
     - win_copy:
         name: copy zipped repo to VM
-        src: '{{  http://download.windowsupdate.com/d/msdownload/update/software/secu/2016/07/windows8.1-kb3172729-x64_e8003822a7ef4705cbb65623b72fd3cec73fe222.msu}}'
-        dest: '{{  http://download.windowsupdate.com/d/msdownload/update/software/secu/2016/07/windows8.1-kb3172729-x64_e8003822a7ef4705cbb65623b72fd3cec73fe222.msu}}'
+        src: '{{ Xcopy /E /I C:\NEWWSUSSTORAGE C:\NEWWSUSSTORAGEE}}'
+        dest: '{{ Xcopy /E /I C:\NEWWSUSSTORAGE C:\NEWWSUSSTORAGEDD}}'
         env:
             ts_integration: true
         environment:
