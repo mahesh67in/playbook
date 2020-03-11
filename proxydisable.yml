@@ -1,11 +1,7 @@
 ---
 - hosts: 15.213.30.168
   tasks:
-    - shell: unset http_proxy && unset https_proxy
-    - win_copy:
-      src: C:\NEWWSUSSTORAGE\createuser
-      dest: C:\Temp\renamed-foo.conf
-       env:
-            ts_integration: true
-        environment:
-            no_proxy: 15.213.30.168
+  - name: Remove any explicit proxies that are set
+    win_inet_proxy:
+    proxy: ''
+    bypass: ''
