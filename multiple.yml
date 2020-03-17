@@ -1,3 +1,4 @@
+- hosts: 15.213.30.168  
   tasks:
   gather_facts: false
      - name: download KB3172729 for Server 2012 R2
